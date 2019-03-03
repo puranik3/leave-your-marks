@@ -1,0 +1,28 @@
+<%- include( './partials/header.ejs', { hasSidebar: true } ) %>
+    <div>
+        <h1 class="margin-top-large margin-bottom-large text-center font-app-cursive">Leave the marks!!</h1>
+    </div>
+    <div>
+        <h2>Stories from people around the world</h2>
+        <hr />
+        <div class="row">
+            <% for( var i = 0; i < stories.length; i++ ) { %>
+                <div class="col-sm-4">
+                    <a href="/stories/<%= stories[i].slug %>" class="plain-link">
+                        <div class="thumbnail">
+                            <img src="<%= stories[i].imageUrl %>" />
+                            <div class="caption">
+                                <h3><%= stories[i].title %></h3>
+                                <p>
+                                    <%= stories[i].summary %>
+                                </p>
+                                Read more</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+
+    </div>
+<%- include( './partials/footer.ejs' ) %>

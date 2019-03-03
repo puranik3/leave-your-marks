@@ -1,0 +1,41 @@
+<%- include( './partials/header.ejs', { hasSidebar: true } ) %>
+    <div>
+        <h1 class="margin-top-large margin-bottom-large text-center font-app-cursive">Leave the marks!!</h1>
+    </div>
+    <h2>Share your story</h2>
+    <hr />
+    <form class="form-horizontal" action="/add-story" method="post">
+        <div class="form-group">
+            <label for="title" class="control-label col-sm-3">Title</label>
+            <div class="col-sm-9">
+                <input type="text" name="title" id="title" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image-url" class="control-label col-sm-3">URL to image</label>
+            <div class="col-sm-9">
+                <input type="url" name="imageUrl" id="image-url" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="summary" class="control-label col-sm-3">Summarize your post in a couple of lines</label>
+            <div class="col-sm-9">
+                <textarea type="url" name="summary" id="summary" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="body" class="control-label col-sm-3">Your post goes in here</label>
+            <div class="col-sm-9">
+                <textarea type="url" name="body" id="body" class="form-control summernote" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <input type="submit" value="Share it!" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+    <p>
+        Read the stories <a href="/stories">here</a>
+    </p>
+<%- include( './partials/footer.ejs' ) %>

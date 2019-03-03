@@ -1,0 +1,40 @@
+<%- include( './partials/header.ejs', { hasSidebar: true } ) %>
+    <div>
+        <h1 class="margin-top-large margin-bottom-large text-center font-app-cursive">Leave the marks!!</h1>
+    </div>
+    <div>
+        <h2><%= story.title %></h2>
+        <hr />
+        <p>
+            Created on <%= story.createdDate.toDateString() %> by <%= story.author %>
+        </p>
+        <img src="<%= story.imageUrl %>" class="center-block story-image" />
+        <%= story.body %>
+    </div>
+    <% if( session.user ) { %>
+        <div class="comments margin-bottom-large">
+            <h3>Comments</h3>
+            <hr />
+            <ul class="list-group">
+                <% for( var i = 0; i < story.comments.length; i++ ) { %>
+                    <li>
+                        <h4>Comment by <%= story.comments[i].author %></h4>
+                        <p>
+                            <%= story.comments[i].body %>
+                        </p>
+                    </li>
+                <% } %>
+            </ul>
+            <form action="/comment" method="post">
+                <label for="comment">Add your comment here...</label>
+                <textarea class="form-control" name="comment" id="comment"></textarea>
+                <input type="hidden" value="<%= story.slug %>" name="slug" />
+                <br />
+                <input type="submit" class="btn btn-primary" value="Post your comment" />
+            </form>
+        </div>
+    <% } %>
+    <p>
+        Read the stories <a href="/stories">here</a>
+    </p>
+<%- include( './partials/footer.ejs' ) %>

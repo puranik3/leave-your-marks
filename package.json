@@ -1,0 +1,22 @@
+{
+    "name": "leave-your-mark",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "cross-env SESSION_SECRET=shh... nodemon app.js",
+        "start-prod": "npm app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^3.0.4",
+        "chalk": "^2.4.2",
+        "cross-env": "^5.2.0",
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "express-session": "^1.15.6",
+        "mongoose": "^5.4.16"
+    }
+}

@@ -1,0 +1,27 @@
+<div class="sidebar">
+    <div class="container-fluid">
+        <h4>Leave the Marks!!</h4>
+        <hr />
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/stories">Stories</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/stories/add">Pen your own story</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/about">About</a>
+            </li>
+        </ul>
+        <% if( session && session.user ) { %>
+            <div class="text-center">
+                <a href="/logout" class="btn btn-primary">Logout</a>
+            </div>
+        <% } else { %>
+            <div class="text-center">
+                <a href="/login" class="btn btn-primary">Login</a>
+                <a href="/registration" class="btn btn-warning">Sign up</a>
+            </div>
+        <% } %>
+    </div>
+</div>
