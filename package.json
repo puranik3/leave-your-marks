@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "start": "cross-env SESSION_SECRET=shh... nodemon app.js",
-        "start-prod": "npm app.js"
+        "start-prod": "node app.js"
     },
     "keywords": [],
     "author": "",
